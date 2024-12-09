@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: YOUR_GITHUB_REPO_URL
+    repoURL: https://github.com/aiyaadev/interview_proj.git
     path: kubernetes/helm-charts/backend
     targetRevision: HEAD
   destination:
