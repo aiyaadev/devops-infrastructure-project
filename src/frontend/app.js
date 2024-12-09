@@ -3,7 +3,7 @@ const app = express();
 const port = process.env.PORT || 80;
 
 app.get('/', (req, res) => {
-  res.json({ message: 'Frontend Service Running - v3' });
+  res.json({ message: 'Frontend Service Running - v4' });
 });
 
 app.get('/health', (req, res) => {
