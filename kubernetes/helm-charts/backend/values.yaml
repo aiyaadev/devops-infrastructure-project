@@ -1,0 +1,24 @@
+replicaCount: 2
+
+image:
+  repository: 905418412825.dkr.ecr.ap-southeast-1.amazonaws.com/backend
+  pullPolicy: Always
+  tag: "latest"
+
+nameOverride: ""
+fullnameOverride: ""
+
+service:
+  type: ClusterIP
+  port: 3000
+
+ingress:
+  enabled: false
+
+resources:
+  limits:
+    cpu: 200m
+    memory: 256Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi

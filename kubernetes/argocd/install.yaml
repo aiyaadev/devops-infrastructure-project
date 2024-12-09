@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: argocd
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: devops-test-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: YOUR_GITHUB_REPO_URL
+    path: kubernetes/helm-charts
+    targetRevision: HEAD
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
