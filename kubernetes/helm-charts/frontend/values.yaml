@@ -3,7 +3,7 @@ replicaCount: 2
 image:
   repository: 905418412825.dkr.ecr.ap-southeast-1.amazonaws.com/frontend
   pullPolicy: Always
-  tag: "latest"
+  tag: 3c66918a5584b6d65f3605fae0291031dcc20d16
 
 nameOverride: ""
 fullnameOverride: ""
