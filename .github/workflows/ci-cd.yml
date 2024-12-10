@@ -4,6 +4,10 @@ on:
   pull_request:
     branches: [ main ]
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
@@ -63,11 +67,12 @@ jobs:
           git config --global user.email "actions@github.com"
           git checkout -b update-image-${{ github.sha }}
           
-          # Update image tags in values files
+          rm -rf .cache
+          
           sed -i "s/tag: .*/tag: ${{ github.sha }}/" kubernetes/helm-charts/frontend/values.yaml
           sed -i "s/tag: .*/tag: ${{ github.sha }}/" kubernetes/helm-charts/backend/values.yaml
           
-          git add .
+          git add kubernetes/helm-charts/*/values.yaml
           git commit -m "Update image tags"
           git push origin update-image-${{ github.sha }}
 
