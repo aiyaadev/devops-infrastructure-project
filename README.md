@@ -25,10 +25,14 @@ This project implements a complete cloud infrastructure and CI/CD pipeline using
 
 ## Project Structure
 ```
-.
 ├── infrastructure/
 │   ├── vpc/
-│   ├── eks/      
+│   ├── eks/
+│   ├── s3/
+│   └── rds/
+├── modules/
+│   ├── vpc/
+│   ├── eks/
 │   ├── s3/
 │   └── rds/
 ├── kubernetes/
